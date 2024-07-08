@@ -1,0 +1,8 @@
+spring:
+
+  application:
+    name: taco-cloud
+
+  datasource:
+    generate-unique-name: false #сообщаем что не нужно генерировать уникальные значения для ссылки бд
+    name: taco-cloud-db

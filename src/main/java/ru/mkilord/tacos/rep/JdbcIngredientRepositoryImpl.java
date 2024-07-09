@@ -1,5 +1,6 @@
 package ru.mkilord.tacos.rep;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -13,15 +14,15 @@ import java.util.Optional;
 @Repository
 public class JdbcIngredientRepositoryImpl implements IngredientRepository {
 
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
+    @Autowired
     public JdbcIngredientRepositoryImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
     @Override
     public Iterable<Ingredient> findAll() {
-
         return jdbcTemplate.query("select id, name, type from Ingredient",
                 this::mapRowToIngredient);
     }
@@ -43,14 +44,6 @@ public class JdbcIngredientRepositoryImpl implements IngredientRepository {
                 Optional.of(results.get(0));
     }
 
-    public Ingredient findById2(String id) {
-        return jdbcTemplate.queryForObject(
-                "select id, name, type from Ingredient where id=?",
-                (rs, rowNum) -> new Ingredient(rs.getString("id"),
-                        rs.getString("name"),
-                        Ingredient.Type.valueOf(rs.getString("type"))), id);
-    }
-
     @Override
     public Ingredient save(Ingredient ingredient) {
         jdbcTemplate.update("insert into Ingredient (id, name, type) values (?,?,?)",
@@ -58,7 +51,5 @@ public class JdbcIngredientRepositoryImpl implements IngredientRepository {
                 ingredient.getName(),
                 ingredient.getType().toString());
         return ingredient;
-
     }
-
 }

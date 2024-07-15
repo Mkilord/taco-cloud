@@ -1,6 +1,7 @@
 package ru.mkilord.tacos;
 
 import lombok.NonNull;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 import ru.mkilord.tacos.entites.Ingredient;
@@ -16,7 +17,7 @@ public class IngredientByIdConverter implements Converter<String, Ingredient> {
 
     private final IngredientRepository ingredientRepo;
 
-    public IngredientByIdConverter(IngredientRepository ingredientRepo) {
+    public IngredientByIdConverter(@Qualifier("ingredientRepository") IngredientRepository ingredientRepo) {
         this.ingredientRepo = ingredientRepo;
     }
 

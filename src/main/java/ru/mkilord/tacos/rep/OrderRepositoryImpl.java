@@ -5,6 +5,7 @@ import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreatorFactory;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import ru.mkilord.tacos.entites.Ingredient;
 import ru.mkilord.tacos.entites.IngredientRef;
@@ -15,9 +16,8 @@ import java.sql.Types;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
-import java.util.function.Function;
-import java.util.stream.Stream;
 
+@Repository
 public class OrderRepositoryImpl implements OrderRepository {
     private final JdbcOperations jdbcOperation;
 

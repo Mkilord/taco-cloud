@@ -5,12 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 import ru.mkilord.tacos.entites.Ingredient;
-import ru.mkilord.tacos.rep.IngredientRepository;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import static ru.mkilord.tacos.entites.Ingredient.*;
+import ru.mkilord.tacos.data.IngredientRepository;
 
 @Component
 public class IngredientByIdConverter implements Converter<String, Ingredient> {

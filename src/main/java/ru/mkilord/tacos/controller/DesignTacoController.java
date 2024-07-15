@@ -11,12 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import ru.mkilord.tacos.entites.Ingredient;
 import ru.mkilord.tacos.entites.Taco;
 import ru.mkilord.tacos.entites.TacoOrder;
-import ru.mkilord.tacos.rep.IngredientRepository;
+import ru.mkilord.tacos.data.IngredientRepository;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Spliterator;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html
-        xmlns:text="http://www.w3.org/1999/xhtml"
         xmlns:th="http://www.thymeleaf.org"
         lang="en">
 <head>
@@ -28,6 +27,13 @@
               th:if="${#fields.hasErrors('deliveryName')}"
               th:errors="*{deliveryName}"
         >Delivery name error</span>
+    </label>
+    <br/>
+    <label>City:
+        <input type="text" th:field="*{deliveryCity}">
+        <span class="validationError"
+              th:if="${#fields.hasErrors('deliveryCity')}"
+              th:errors="*{deliveryCity}">City name error</span>
     </label>
     <br/>
     <label>Street address:

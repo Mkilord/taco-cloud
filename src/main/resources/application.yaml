@@ -3,4 +3,13 @@ spring:
     name: taco-cloud
   datasource:
     generate-unique-name: false #сообщаем что не нужно генерировать уникальные значения для ссылки бд
-    name: taco-cloud-db
+    url: jdbc:h2:file:./target/data/taco-cloud-db
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+#      ddl-auto: create-drop
+  sql:
+    init:
+      mode: embedded

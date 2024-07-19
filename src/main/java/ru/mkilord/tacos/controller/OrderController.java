@@ -12,6 +12,8 @@ import org.springframework.web.bind.support.SessionStatus;
 import ru.mkilord.tacos.data.OrderRepository;
 import ru.mkilord.tacos.entites.TacoOrder;
 
+import java.util.Objects;
+
 @Slf4j
 @Controller
 @RequestMapping("/orders")
@@ -24,7 +26,8 @@ public class OrderController {
     }
 
     @GetMapping("/current")
-    public String orderForm() {
+    public String orderForm(TacoOrder tacoOrder) {
+        if(Objects.isNull(tacoOrder))return "redirect:/order_created";
         return "orderForm";
     }
 

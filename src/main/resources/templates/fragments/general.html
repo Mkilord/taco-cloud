@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headerfiles">
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" th:href="@{/styles.css}"/>
+</head>
+<body>
+	<header th:fragment="header">
+		<img class="header-logo" th:src="@{/images/taco-logo.png}"/>
+		<div class="header-text-container">
+			<a class="header-title" href="/" id="logo">Taco Cloud</a>
+			<div class="header-text-container">
+				<a class="item" href="design" id="create-order">Create order</a>
+				<a class="item" href="about_us" id="about-us">About us</a>
+				<a class="item" href="/order_created">(Debug) order created</a>
+			</div>
+		</div>
+	</header>
+	<footer th:fragment="footer">
+	</footer>
+</body>
+</html>

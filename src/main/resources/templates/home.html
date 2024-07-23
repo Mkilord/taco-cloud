@@ -8,8 +8,20 @@
 </head>
 
 <body>
-	<header th:replace="~{fragments/general::header}"></header>
-	<h1>Welcome to...</h1>
-	<footer th:replace="~{fragments/general::footer}"></footer>
+	<div class="wrapper">
+		<header th:replace="~{fragments/general::header}"></header>
+		<main class="main">
+			<h2>Create Your Perfect Taco</h2>
+			<p>At Taco Cloud, we believe that every taco should be unique.<br>
+				Our app makes it easy for you to create
+				custom tacos by selecting from a wide range of ingredients and combinations.<br>
+				Whether you prefer a classic Mexican taco or something completely new, you can craft your ideal taco!
+			</p>
+			<p>Enjoy a simple and intuitive taco creation process. Our system lets you choose ingredients, adjust
+				quantities, and see the results in real-time.</p>
+			<a href="/design">Start Creating Your Taco</a>
+		</main>
+		<footer th:replace="~{fragments/general::footer}"></footer>
+	</div>
 </body>
 </html>

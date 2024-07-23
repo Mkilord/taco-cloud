@@ -26,8 +26,7 @@ public class OrderController {
     }
 
     @GetMapping("/current")
-    public String orderForm(TacoOrder tacoOrder) {
-        if(Objects.isNull(tacoOrder))return "redirect:/order_created";
+    public String orderForm() {
         return "orderForm";
     }
 

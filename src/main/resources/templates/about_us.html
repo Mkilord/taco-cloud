@@ -7,8 +7,55 @@
 	<th:block th:replace="~{fragments/general.html::headerfiles}"></th:block>
 </head>
 <body>
-	<th:block th:replace="~{fragments/general.html::header}"></th:block>
-	<div> We are a good company!</div>
-	<th:block th:replace="~{fragments/general.html::footer}"></th:block>
+	<div class="wrapper">
+		<header th:replace="~{fragments/general.html::header}"></header>
+		<main class="main">
+			<h1>About Us</h1>
+			<h2>Welcome to Taco Cloud!</h2>
+			<p>At Taco Cloud, we're passionate about bringing the authentic flavors of Mexico right to your doorstep.
+				Our mission is to create a delightful taco experience for all taco lovers, combining traditional recipes
+				with innovative twists.</p>
+
+			<h2>Our Story</h2>
+			<p>Taco Cloud was founded with a simple idea: to share our love for tacos with the world. Our journey began
+				in a small kitchen, where we experimented with various ingredients and flavors to create the perfect
+				taco. Today, we continue that tradition, ensuring every taco we serve is crafted with care and bursting
+				with flavor.</p>
+
+			<h2>Our Commitment</h2>
+			<ul>
+				<li><strong>Quality Ingredients:</strong> We use only the freshest and finest ingredients to prepare our
+					tacos. From locally sourced vegetables to premium meats, quality is our top priority.
+				</li>
+				<li><strong>Authenticity:</strong> Our recipes are inspired by traditional Mexican cuisine, providing an
+					authentic taste experience. We stay true to our roots while embracing creativity and innovation.
+				</li>
+				<li><strong>Sustainability:</strong> We are committed to sustainable practices. From eco-friendly
+					packaging to responsible sourcing, we strive to reduce our environmental footprint.
+				</li>
+			</ul>
+
+			<h2>Customize Your Taco</h2>
+			<p>At Taco Cloud, we believe that every taco should be as unique as you are. That's why we offer a
+				customizable taco experience. Choose your favorite ingredients and build your perfect taco from the
+				ground up. Whether you prefer spicy, mild, vegan, or meaty, the possibilities are endless!</p>
+
+			<h2>Our Menu</h2>
+			<p>Our menu features a wide variety of tacos, each designed to tantalize your taste buds. Whether you're a
+				fan of classic carnitas, crave spicy chorizo, or prefer vegetarian options, we have something for
+				everyone. Don’t forget to try our signature salsas and sides to complete your meal!</p>
+
+			<h2>Join the Taco Cloud Family</h2>
+			<p>We believe that great food brings people together. When you order from Taco Cloud, you're not just
+				getting a meal; you're joining a community of taco enthusiasts. We invite you to explore our menu,
+				customize your tacos, and share the joy of tacos with friends and family.</p>
+
+			<h2>Contact Us</h2>
+			<p>Have questions or feedback? We'd love to hear from you! Reach out to us at <a
+					href="mailto:email@example.com">email@example.com</a> or follow us on social media to stay updated
+				on our latest offerings and promotions.</p>
+		</main>
+		<footer th:replace="~{fragments/general.html::footer}"></footer>
+	</div>
 </body>
 </html>

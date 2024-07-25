@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Taco Cloud</title>
+	<th:block th:replace="~{fragments/general::headerfiles}"></th:block>
+</head>
+<body>
+	<header th:replace="~{fragments/general::header}"></header>
+	<h1>Login</h1>
+	<div th:if="${error}">
+		Unable to login. Check your username and password.
+	</div>
+	<p>New here? Click
+		<a th:href="@{/register}">here</a> to register.</p>
+	<form id="loginForm" method="POST" th:action="@{/login}">
+		<label>Username:
+			<input name="username" type="text"/><br/>
+		</label>
+		<label>Password:
+			<input name="password" type="password"/>
+		</label>
+		<input type="submit" value="Login"/>
+	</form>
+	<footer th:replace="~{fragments/general::footer}"></footer>
+</body>
+</html>

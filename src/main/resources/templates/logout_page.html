@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Taco Cloud</title>
+	<th:block th:replace="~{fragments/general::headerfiles}"></th:block>
+</head>
+<body>
+	<div class="wrapper">
+		<header th:replace="~{fragments/general::header}"></header>
+		<form action="/logout" method="post">
+			<h1>Do you have logout?</h1>
+			<div style="display: flex">
+				<input type="submit" value="Log out">
+				<a href="/">Cancel</a>
+			</div>
+		</form>
+		<footer th:replace="~{fragments/general::footer}"></footer>
+	</div>
+</body>
+</html>

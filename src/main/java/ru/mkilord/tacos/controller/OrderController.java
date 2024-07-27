@@ -2,6 +2,7 @@ package ru.mkilord.tacos.controller;
 
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,8 +12,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import ru.mkilord.tacos.data.OrderRepository;
 import ru.mkilord.tacos.entites.TacoOrder;
-
-import java.util.Objects;
 
 @Slf4j
 @Controller
@@ -31,8 +30,7 @@ public class OrderController {
     }
 
     @PostMapping
-    public String processOrder(@Valid TacoOrder order, Errors errors, SessionStatus sessionStatus) {
-        System.out.println(errors.hasErrors());
+    public String processOrder(@Valid TacoOrder order, Errors errors, SessionStatus sessionStatus, Session session) {
         log.info(errors.toString());
         if (errors.hasErrors()) return "/orderForm";
         orderRepo.save(order);

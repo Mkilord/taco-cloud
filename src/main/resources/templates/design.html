@@ -76,7 +76,7 @@
 				<div>
 					<label>
 						<h3>Name your taco creation:</h3>
-						<input th:field="*{name}" type="text" placeholder="Name of your taco"/>
+						<input placeholder="Name of your taco" th:field="*{name}" type="text"/>
 						<span class="validationError"
 						      th:errors="*{name}"
 						      th:if="${#fields.hasErrors('name')}">Name Error</span>

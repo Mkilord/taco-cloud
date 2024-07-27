@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="headerfiles">
 	<meta charset="UTF-8"/>
 	<link rel="stylesheet" th:href="@{/styles.css}"/>
@@ -10,10 +10,13 @@
 	<header th:fragment="header">
 		<img class="header-logo" th:src="@{/images/taco-logo.png}"/>
 		<div class="header-text-container">
-			<a class="header-title" href="/" id="logo">Taco Cloud</a>
+			<a class="header-title" href="/">Taco Cloud</a>
 			<div class="header-text-container">
-				<a class="item" href="/design" id="create-order">Create order</a>
-				<a class="item" href="/about_us" id="about-us">About us</a>
+				<a class="item" href="/design">Create order</a>
+				<a class="item" href="/about_us">About us</a>
+				<a class="item" href="/logout_page" sec:authorize="isAuthenticated()">Out of Acc</a>
+				<a class="item" href="/login" sec:authorize="!isAuthenticated()">Log in</a>
+<!--				<a class="item" href="/login" th:unless="${#authentication?.principal}">Log in</a>-->
 				<a class="item" href="/order_created">(Debug) order created</a>
 			</div>
 		</div>

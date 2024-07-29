@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en"
       xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head th:fragment="headerfiles">
+<head th:fragment="headfiles">
 	<meta charset="UTF-8"/>
+	<link as="font" crossorigin="anonymous" href="./fonts/Roboto-Regular.woff2" rel="preload" type="font/woff2">
 	<link rel="stylesheet" th:href="@{/styles.css}"/>
-	<base href="/">
 </head>
 <body>
 	<header th:fragment="header">
-		<img class="header-logo" th:src="@{/images/taco-logo.png}"/>
+		<img alt="" class="header-logo" th:src="@{/images/taco-logo.png}"/>
 		<div class="header-text-container">
 			<a class="header-title" href="/">Taco Cloud</a>
 			<div class="header-text-container">
@@ -16,12 +16,10 @@
 				<a class="item" href="/about_us">About us</a>
 				<a class="item" href="/logout_page" sec:authorize="isAuthenticated()">Out of Acc</a>
 				<a class="item" href="/login" sec:authorize="!isAuthenticated()">Log in</a>
-<!--				<a class="item" href="/login" th:unless="${#authentication?.principal}">Log in</a>-->
 				<a class="item" href="/order_created">(Debug) order created</a>
 			</div>
 		</div>
 	</header>
-	<footer th:fragment="footer">
-	</footer>
+	<footer th:fragment="footer"></footer>
 </body>
 </html>

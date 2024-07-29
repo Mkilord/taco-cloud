@@ -3,15 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Taco Cloud</title>
-	<th:block th:replace="~{fragments/general::headerfiles}"></th:block>
+	<th:block th:replace="~{fragments/general::headfiles}"></th:block>
 </head>
 <body>
-	<div class="wrapper">
-		<header th:replace="~{fragments/general::header}"></header>
+	<header th:replace="~{fragments/general::header}"></header>
+	<main>
 		<h1>Login</h1>
-		<div th:if="${errorMsg}" th:text="${errorMsg}">
+		<span class="validationError" th:if="${errorMsg}" th:text="${errorMsg}">
 			Unable to login. Check your username and password.
-		</div>
+		</span>
 		<p>New here? Click
 			<a th:href="@{/register}">here</a> to register.</p>
 		<form id="loginForm" method="POST" th:action="@{/login}">
@@ -23,7 +23,7 @@
 			</label>
 			<input type="submit" value="Login"/>
 		</form>
-		<footer th:replace="~{fragments/general::footer}"></footer>
-	</div>
+	</main>
+	<footer th:replace="~{fragments/general::footer}"></footer>
 </body>
 </html>

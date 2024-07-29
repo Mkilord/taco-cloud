@@ -3,14 +3,13 @@
 		lang="en"
 		xmlns:th="http://www.thymeleaf.org">
 <head>
-	<th:block th:replace="~{fragments/general.html :: headerfiles}"></th:block>
+	<th:block th:replace="~{fragments/general.html :: headfiles}"></th:block>
 	<title>Taco Cloud</title>
 </head>
 
 <body>
-	<div class="wrapper">
 		<header th:replace="~{fragments/general.html::header}"></header>
-		<main class="main">
+		<main>
 			<div th:if="${tacoOrder}== null">
 				<h1 style="align-content: center">This page is old please go to menu</h1>
 				<a th:href="@{/design}" th:method="GET">Create order</a>
@@ -99,6 +98,5 @@
 			</div>
 		</main>
 		<footer th:replace="~{fragments/general.html::footer}"></footer>
-	</div>
 </body>
 </html>

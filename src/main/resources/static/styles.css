@@ -1,3 +1,6 @@
+@import "fonts.css";
+@import "normalize.css";
+
 div.ingredient-group:nth-child(odd) {
     float: left;
     padding-right: 20px;
@@ -18,13 +21,6 @@ div.ingredient-group {
     clear: both;
 }
 
-*, *:after, *:before {
-    text-decoration: none;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
 span.validationError {
     color: red;
 }
@@ -33,14 +29,6 @@ button {
     height: 40px;
     margin-top: 10px;
     color: #574838;
-    font-family: Arial, serif;
-    font-weight: bold;
-    font-size: medium;
-}
-
-input {
-    font-family: Arial, serif;
-    font-size: medium;
 }
 
 footer {
@@ -49,24 +37,18 @@ footer {
     background: #dac46e;
 }
 
-html, body {
-    font-family: Arial, sans-serif;
-    height: 100%;
+body {
     color: #574838;
     background: #f1dc8c;
-    margin: unset;
 }
 
-.wrapper {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
+.status-msg{
+    text-align: center;
 }
-
-.main {
+/*main {
     flex: 1 1 auto;
     margin: 10px 20px;
-}
+}*/
 
 header {
     width: 100%;
@@ -79,9 +61,8 @@ header {
 
 .header-logo {
     height: 70px;
-    margin-right: 20px;
-    margin-left: 20px;
     width: 70px;
+    margin-inline: 20px 20px;
 }
 
 .header-title {
@@ -99,11 +80,10 @@ header {
     height: fit-content;
     max-height: 100px;
     margin-right: 10px;
+    margin-bottom: 2px;
     align-self: flex-end;
     color: #574838;
     font-size: large;
-    margin-bottom: 2px;
-    text-decoration: none;
 }
 
 .item:first-child {

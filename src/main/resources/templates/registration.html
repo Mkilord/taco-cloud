@@ -3,14 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Taco Cloud</title>
-	<th:block th:replace="~{fragments/general :: headerfiles}"/>
+	<th:block th:replace="~{fragments/general :: headfiles}"/>
 </head>
 <body>
-	<div class="wrapper">
-
-		<header th:replace="~{fragments/general::header}"></header>
-		<h1>Register</h1>
+	<header th:replace="~{fragments/general::header}"></header>
+	<main>
 		<form method="post" th:action="@{/register}">
+			<h1>Register</h1>
 			<label>
 				Username:
 				<input name="username" type="text"><br/>
@@ -49,7 +48,7 @@
 			</label>
 			<input type="submit" value="Register">
 		</form>
-		<footer th:replace="~{fragments/general::footer}"></footer>
-	</div>
+	</main>
+	<footer th:replace="~{fragments/general::footer}"></footer>
 </body>
 </html>

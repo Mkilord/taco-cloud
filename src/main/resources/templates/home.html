@@ -3,12 +3,11 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
-	<th:block th:insert="~{fragments/general::headerfiles}"></th:block>
+	<th:block th:insert="~{fragments/general::headfiles}"></th:block>
 	<title>Taco Cloud</title>
 </head>
 
 <body>
-	<div class="wrapper">
 		<header th:replace="~{fragments/general::header}"></header>
 		<main class="main">
 			<h2>Create Your Perfect Taco</h2>
@@ -22,6 +21,5 @@
 			<a href="/design">Start Creating Your Taco</a>
 		</main>
 		<footer th:replace="~{fragments/general::footer}"></footer>
-	</div>
 </body>
 </html>

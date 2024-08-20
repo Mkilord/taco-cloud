@@ -25,71 +25,24 @@ span.validationError {
     color: red;
 }
 
+main {
+    margin-inline: 15px 15px;
+    height: 100%;
+}
+
 button {
     height: 40px;
     margin-top: 10px;
     color: #574838;
 }
 
-footer {
-    width: 100%;
-    height: 50px;
-    background: #dac46e;
-}
 
 body {
     color: #574838;
     background: #f1dc8c;
 }
 
-.status-msg{
+.status-msg {
     text-align: center;
 }
-/*main {
-    flex: 1 1 auto;
-    margin: 10px 20px;
-}*/
 
-header {
-    width: 100%;
-    height: fit-content;
-    background: #dac46e;
-    box-shadow: 0 0 5px gray;
-    display: flex;
-    align-items: center;
-}
-
-.header-logo {
-    height: 70px;
-    width: 70px;
-    margin-inline: 20px 20px;
-}
-
-.header-title {
-    color: #574838;
-    font-size: xx-large;
-    align-self: flex-end;
-}
-
-.header-text-container {
-    display: flex;
-}
-
-.item {
-    width: fit-content;
-    height: fit-content;
-    max-height: 100px;
-    margin-right: 10px;
-    margin-bottom: 2px;
-    align-self: flex-end;
-    color: #574838;
-    font-size: large;
-}
-
-.item:first-child {
-    margin-left: 10px;
-}
-
-.item:last-child {
-    margin-right: 0;
-}

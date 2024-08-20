@@ -2,14 +2,14 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <!--@thymesVar id="tacoOrder" type="ru.mkilord.tacos.entites.TacoOrder"-->
 <head>
-	<th:block th:replace="~{fragments/general.html :: headfiles}"></th:block>
+	<th:block th:replace="~{fragments/general.html :: content-page-files}"></th:block>
 	<title>Taco Cloud</title>
 </head>
 
 <body>
 
 	<header th:replace="~{fragments/general.html::header}"></header>
-	<main>
+	<main class="content">
 		<div th:if="${tacoOrder}== null">
 			<h1 style="align-content: center">This page is old please go to menu</h1>
 			<a th:href="@{/design}" th:method="GET">Create order</a>

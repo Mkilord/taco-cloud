@@ -1,0 +1,54 @@
+@import "container-layout.css";
+
+.header {
+    display: flex;
+    white-space: nowrap;
+    width: 100%;
+    background: #dac46e;
+    box-shadow: 0 1px 3px -1px dimgray;
+    align-items: center;
+}
+
+.header-logo {
+    max-height: 60px;
+    max-width: 60px;
+    margin-inline: 20px 20px;
+}
+
+.header-title {
+    color: #574838;
+    font-size: xx-large;
+}
+
+.header-text-container {
+    display: inline-block;
+    vertical-align: baseline;
+}
+.item:active{
+    color: #413628;
+    text-shadow: rgba(70, 70, 70, 0.82) -1px -1px 0;
+}
+.item:hover{
+    color: #413628;
+    text-shadow: rgba(159, 159, 159, 0.46) 0 0 1px;
+}
+.item {
+    max-height: 100px;
+    margin-right: 10px;
+    color: #574838;
+    font-size: large;
+}
+
+.item:nth-child(2) {
+    margin-left: 10px;
+}
+
+.item:last-child {
+    margin-right: 0;
+}
+
+footer {
+    width: 100%;
+    flex-shrink: 0;
+    background: #dac46e;
+}

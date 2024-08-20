@@ -2,12 +2,12 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org">
 <head>
-	<th:block th:replace="~{fragments/general.html::headfiles}"></th:block>
+	<th:block th:replace="~{fragments/general.html::content-page-files}"></th:block>
 	<title>Your order created!</title>
 </head>
 <body>
 	<header th:replace="~{fragments/general.html::header}"></header>
-	<main>
+	<main class="content">
 		<h1 class="status-msg">Great! <br> Your order created!</h1>
 	</main>
 	<footer th:replace="~{fragments/general.html::footer}"></footer>

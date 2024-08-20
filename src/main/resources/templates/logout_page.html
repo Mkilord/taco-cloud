@@ -3,11 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Taco Cloud</title>
-	<th:block th:replace="~{fragments/general::headfiles}"></th:block>
+	<th:block th:replace="~{fragments/general::content-page-files}"></th:block>
 </head>
 <body>
 	<header th:replace="~{fragments/general::header}"></header>
-	<main>
+	<main class="content">
 
 		<form action="/logout" method="post">
 			<h1>Do you have logout?</h1>

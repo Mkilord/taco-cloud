@@ -1,0 +1,49 @@
+.form-container {
+    background-color: #dac46e;
+    padding: 20px;
+    box-shadow: 0 1px 3px -1px dimgray;
+    border-radius: 10px;
+}
+
+.drop-line-height {
+    line-height: 1.1;
+}
+
+.form-title {
+    margin-bottom: 10px;
+}
+
+.input-form {
+    width: fit-content;
+}
+
+.input-container {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.field-container {
+    width: fit-content;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.field-item {
+    width: fit-content;
+    max-width: 200px;
+}
+
+.label-item {
+    margin-right: 10px
+}
+
+.input-container:last-child {
+    margin-bottom: unset;
+}
+
+.submit-button {
+    width: 50%;
+    height: 30px;
+}

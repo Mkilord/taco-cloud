@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en"
       xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head th:fragment="headfiles">
-	<meta charset="UTF-8"/>
+<head th:fragment="content-page-files">
 	<link as="font" crossorigin="anonymous" href="./fonts/Roboto-Regular.woff2" rel="preload" type="font/woff2">
+	<link rel="stylesheet" th:href="@{/header-footer.css}">
 	<link rel="stylesheet" th:href="@{/styles.css}"/>
 </head>
 <body>
-	<header th:fragment="header">
+	<header class="header" th:fragment="header">
 		<img alt="" class="header-logo" th:src="@{/images/taco-logo.png}"/>
 		<div class="header-text-container">
 			<a class="header-title" href="/">Taco Cloud</a>
-			<div class="header-text-container">
-				<a class="item" href="/design">Create order</a>
-				<a class="item" href="/about_us">About us</a>
-				<a class="item" href="/logout_page" sec:authorize="isAuthenticated()">Out of Acc</a>
-				<a class="item" href="/login" sec:authorize="!isAuthenticated()">Log in</a>
-				<a class="item" href="/order_created">(Debug) order created</a>
-			</div>
+			<a class="item" href="/design">Create order</a>
+			<a class="item" href="/about_us">About us</a>
+			<!--			<a class="item" href="/order_created">(Debug) order created</a>-->
+			<a class="item" href="/logout_page" sec:authorize="isAuthenticated()">Out of Acc</a>
+			<a class="item" href="/login" sec:authorize="!isAuthenticated()">Log in</a>
 		</div>
 	</header>
-	<footer th:fragment="footer"></footer>
+	<footer th:fragment="footer">
+		<div style="text-align: right;margin-right: 10px">Taco Cloud v.1.0.3 2024</div>
+	</footer>
 </body>
 </html>

@@ -3,12 +3,12 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
 	<title>Taco Cloud</title>
-	<th:block th:replace="~{/fragments/general.html::headfiles}"></th:block>
+	<th:block th:replace="~{/fragments/general.html::content-page-files}"></th:block>
 </head>
 
 <body>
 	<header th:replace="~{fragments/general.html::header}"></header>
-	<main>
+	<main class="content">
 		<h1>Design your taco!</h1>
 		<form method="POST" th:object="${taco}">
     <span class="validationError"

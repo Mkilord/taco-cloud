@@ -3,26 +3,37 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Taco Cloud</title>
-	<th:block th:replace="~{fragments/general::headfiles}"></th:block>
+	<th:block th:include="~{fragments/general::content-page-files}"></th:block>
+	<link rel="stylesheet" th:href="@{input_form.css}">
 </head>
 <body>
 	<header th:replace="~{fragments/general::header}"></header>
-	<main>
-		<h1>Login</h1>
-		<span class="validationError" th:if="${errorMsg}" th:text="${errorMsg}">
-			Unable to login. Check your username and password.
+	<main class="center-container">
+		<div class="form-container">
+			<h1 class="form-title drop-line-height">Login</h1>
+			<span class="validationError" th:if="${errorMsg}">
+			!Error: <span th:text="${errorMsg}">Unable to login. Check your username and password.</span>
 		</span>
-		<p>New here? Click
-			<a th:href="@{/register}">here</a> to register.</p>
-		<form id="loginForm" method="POST" th:action="@{/login}">
-			<label>Username:
-				<input name="username" th:value="${username}" type="text"/><br/>
-			</label>
-			<label>Password:
-				<input name="password" type="password"/>
-			</label>
-			<input type="submit" value="Login"/>
-		</form>
+			<p>New here? Click <a th:href="@{/register}">here</a> to register.</p>
+			<form class="input-form" id="loginForm" method="post" th:action="@{/login}">
+				<div class="input-container">
+					<div class="field-container">
+						<label class="label-item" for="username">Username:</label>
+						<input class="field-item" id="username"
+						       name="username"
+						       th:value="${username}"
+						       type="text"/>
+					</div>
+					<div class="field-container">
+						<label class="label-item" for="password">Password:</label>
+						<input class="field-item" id="password"
+						       name="password"
+						       type="password"/>
+					</div>
+					<input class="submit-button" type="submit" value="Login"/>
+				</div>
+			</form>
+		</div>
 	</main>
 	<footer th:replace="~{fragments/general::footer}"></footer>
 </body>

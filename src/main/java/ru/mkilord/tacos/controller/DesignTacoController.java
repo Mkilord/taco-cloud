@@ -1,40 +1,35 @@
 package ru.mkilord.tacos.controller;
 
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
+import ru.mkilord.tacos.data.IngredientRepository;
 import ru.mkilord.tacos.entites.Ingredient;
 import ru.mkilord.tacos.entites.Taco;
 import ru.mkilord.tacos.entites.TacoOrder;
-import ru.mkilord.tacos.data.IngredientRepository;
 
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-import static ru.mkilord.tacos.entites.Ingredient.*;
+import static ru.mkilord.tacos.entites.Ingredient.Type;
 
 @Slf4j
 @Controller
 @RequestMapping("/design")
 @SessionAttributes("tacoOrder")
+@AllArgsConstructor
 public class DesignTacoController {
     private final IngredientRepository ingredientRepository;
 
-    @Autowired
-    public DesignTacoController(@Qualifier("ingredientRepository") IngredientRepository ingredientRepo) {
-        this.ingredientRepository = ingredientRepo;
-    }
-
     @ModelAttribute
     public void addIngredientsToModel(Model model) {
-        Iterable<Ingredient> ingredients = ingredientRepository.findAll();
-        Type[] types = Type.values();
-        for (Type type : types) {
+        var ingredients = ingredientRepository.findAll();
+        var types = Type.values();
+        for (var type : types) {
             model.addAttribute(type.toString().toLowerCase(), filterByType(ingredients, type));
             System.out.println(type.toString().toLowerCase());
         }

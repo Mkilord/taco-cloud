@@ -49,7 +49,7 @@ public class SecurityConfig {
                 )
                 .formLogin(form -> form
                         .loginPage("/login")
-                        .failureUrl("/login?error=true")
+                        .failureUrl("/login?errorOpt=true")
                         .failureHandler((req, resp, exception) -> resp.sendRedirect("/login?error=true&username=" + req.getParameter("username")))
                         .defaultSuccessUrl("/"))
                 .csrf(csrf -> csrf

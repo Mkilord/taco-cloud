@@ -14,13 +14,12 @@ public class LoginController {
     @GetMapping
     public String loginProcess(
             @RequestParam(value = "error", required = false)
-            Optional<String> error,
+            Optional<String> errorOpt,
             @RequestParam(value = "username", required = false)
-            Optional<String> username,
-            Model model
-    ) {
-        username.ifPresent(present -> model.addAttribute("username", username.get()));
-        error.ifPresent(present -> model.addAttribute("errorMsg", "Invalid username or password."));
+            Optional<String> usernameOpt,
+            Model model) {
+        usernameOpt.ifPresent(present -> model.addAttribute("username", usernameOpt.get()));
+        errorOpt.ifPresent(present -> model.addAttribute("errorMsg", "Invalid username or password."));
         return "login";
     }
 }
